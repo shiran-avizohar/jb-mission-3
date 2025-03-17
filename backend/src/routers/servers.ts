@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAll, updateStatus } from "../../../backend/src/controllers/servers/controller"
+import { getAll, updateStatus } from "../controllers/servers/controller"
 
 const router = Router();
 
