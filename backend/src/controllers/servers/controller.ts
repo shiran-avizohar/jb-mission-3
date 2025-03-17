@@ -8,32 +8,31 @@ export async function getAll(req: Request, res: Response, next: NextFunction) {
         const servers = await Server.findAll({
             include: [{
                 model: Company,
-                attributes: ["companyName"], 
+                attributes: ["companyName"], // Include the company name from the Company model
             }]
         });
-        res.json(servers); 
+        res.json(servers); // Return the list of servers in JSON format
     } catch (e) {
-        next(e); 
+        next(e); // Pass any error to the next middleware
     }
 }
-// The function to update the server status
 
+// The function to update the server status
 export const updateStatus: RequestHandler = async (req, res, next): Promise<void> => {
     try {
-        const { serverId } = req.params;  
-        const server = await Server.findByPk(serverId);
+        const { serverId } = req.params;  // Get the serverId from the request parameters
+        const server = await Server.findByPk(serverId); // Find the server by its primary key
 
         if (!server) {
-            res.status(404).json({ message: "Server not found" });
+            res.status(404).json({ message: "Server not found" }); // Return an error if the server is not found
             return;
         }
 
+        server.status = server.status === "Active" ? "Inactive" : "Active"; // Toggle the server status
+        await server.save(); // Save the updated server status to the database
 
-        server.status = server.status === "Active" ? "Inactive" : "Active";
-        await server.save(); 
-
-        res.json({ message: "Status updated successfully", server }); // החזרת הודעה
+        res.json({ message: "Status updated successfully", server }); // Return a success message and the updated server
     } catch (e) {
-        next(e); 
+        next(e); // Pass any error to the next middleware
     }
 };
