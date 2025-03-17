@@ -1,18 +1,18 @@
 // ServerCard.tsx
 import React from 'react'
 
-// טיפוס ה-Server שהולך להיות Prop ב-ServerCard
+// Server type used as a prop in ServerCard
 interface Server {
     serverId: string;
     serverName: string;
     ip: string;
     companyName: string;
-    status: "Active" | "Inactive";  // ערכים מוגבלים
+    status: "Active" | "Inactive";  // Limited values
     creationTime: string;
     companyId: string;
 }
 
-// טיפוס ה-Props של ServerCard
+// Props type for ServerCard
 interface ServerCardProps {
     server: Server;
 }

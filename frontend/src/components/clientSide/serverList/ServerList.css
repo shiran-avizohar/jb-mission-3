@@ -1,4 +1,4 @@
-/* הגדרות כלליות */
+/* General settings */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ body {
     color: #333;
 }
 
-/* עיצוב הכלל עבור ServerList */
+/* ServerList container design */
 .server-list-container {
     padding: 2rem;
     max-width: 1200px;
@@ -57,7 +57,7 @@ p {
     text-align: center;
 }
 
-/* כאשר אין שרתים */
+/* When there are no servers */
 .no-servers {
     font-size: 1.125rem;
     color: #9ca3af;
@@ -65,7 +65,7 @@ p {
     font-style: italic;
 }
 
-/* עיצוב תצוגת שרתים */
+/* Server cards layout */
 .server-cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
