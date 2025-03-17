@@ -1,0 +1,63 @@
+.server-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.server-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.server-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.server-card p {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+}
+
+.server-card .status {
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.server-card .status.Active {
+    background-color: #34d399;
+    color: #ffffff;
+}
+
+.server-card .status.Inactive {
+    background-color: #f87171;
+    color: #ffffff;
+}
+
+.server-card .company-id {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+@media (max-width: 768px) {
+    .server-card {
+        padding: 1.5rem;
+    }
+
+    .server-card h2 {
+        font-size: 1.25rem;
+    }
+
+    .server-card p {
+        font-size: 0.875rem;
+    }
+}
